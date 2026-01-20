@@ -52,6 +52,69 @@ console.log(`Before splice: ${names}`)
 names.splice(1,1, 'Nathan')
 console.log(`After splice: ${names}`)
 
+////////////////////////////////////////////////
+// Fruit Basket Manager Exercise
+
+let basket = ['banana', 'apple', 'pear', 'pineapple', 'orange', 'dragonfruit'];
+
+const isEven = (length) => {
+	return length % 2 === 0;
+}
+
+// Read from the array
+
+// Log the first fruit
+console.log(basket[0])
+
+// Log the last fruit
+console.log(basket[basket.length - 1])
+
+
+// Modify the basket
+
+// Replace banana with kiwi
+const bananaIndex = basket.indexOf('banana');
+basket[bananaIndex] = 'kiwi';
+
+// Remove the last fruit
+basket.pop();
+
+// Add mango to the start
+basket.unshift('mango');
+
+// Loop through the basket
+
+for(let i = 0; i < basket.length; i++) {
+	console.log(`Fruit ${i+1}: ${basket[i]}`)
+}
+
+// Search for a fruit
+// Check if orange exists
+const orangeIndex = basket.indexOf("orange");
+if(orangeIndex == -1) {
+	console.log('Orange not found')
+} else {
+	console.log('Orange found at index: ', orangeIndex);
+}
+
+// Copy part of basket
+let firstIndex, secondIndex;
+
+if(isEven(basket.length)) {
+	// 3 - 1 = 2
+	firstIndex = (basket.length / 2) - 1;
+	// 2 + 2 = 4
+	secondIndex = firstIndex + 2;
+} else {
+	firstIndex = Math.floor(basket.length / 2);
+	secondIndex = firstIndex;
+}
+
+let citrus = basket.slice(firstIndex, secondIndex);
+console.log("Original basket: ", basket)
+console.log("New basket: ", citrus)
+
+
 
 function setup() {
 	createCanvas(500, 500);
