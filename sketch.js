@@ -33,9 +33,24 @@ for(let i = 0; i < names.length; i++) {
 	console.log(names[i]);
 }
 
-// Alterantively
-console.log(names.join(" "))
+// Simpler alternative
+for(const name of names) {
+	console.log(name)
+}
+
+// Alterantively without a for loop
+console.log(names.join(" "));
 console.log("====================")
+
+
+// Remove or replace items at certain points
+names.splice(1,1); // removes the middle (assuming 3)
+console.log(names)
+console.log("====================")
+names.push('Mark') // need 1 more value
+console.log(`Before splice: ${names}`)
+names.splice(1,1, 'Nathan')
+console.log(`After splice: ${names}`)
 
 
 function setup() {
